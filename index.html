@@ -1,25 +1,297 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>个人博客主页</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="网络安全专题：威胁、漏洞、防御策略、云安全、零信任、事件响应、工具与学习路径" />
+  <title>网络安全专题 · aivision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html" class="active">首页</a></li>
-      <li><a href="about.html">关于我们</a></li>
-      <li><a href="products.html">产品展示</a></li>
-      <li><a href="contact.html">联系方式</a></li>
-    </ul>
-  </nav>
-  <main>
-    <h1>欢迎来到我的个人博客</h1>
-    <p>这是一个简约风格的个人博客网站模板，包含首页、关于我们、产品展示、联系方式等页面。</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">aivision 安全专题</div>
+      <nav class="nav">
+        <a href="#overview">威胁概览</a>
+        <a href="#vulns">常见漏洞</a>
+        <a href="#defense">防御策略</a>
+        <a href="#cloud">云与容器</a>
+        <a href="#zero-trust">零信任</a>
+        <a href="#security-intro">主题介绍</a>
+        <a href="#cra">CRA法案</a>
+        <a href="#ir">事件响应</a>
+        <a href="#resources">工具与资源</a>
+        <button id="themeToggle" class="btn ghost" aria-label="切换主题">切换主题</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>网络安全专题</h1>
+      <p>从威胁到防御，从云到零信任——快速构建你的安全知识图谱与实践清单。</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#overview">开始了解</a>
+        <a class="btn" href="#resources">查看工具与资源</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- 网络安全主题介绍 -->
+    <section id="security-intro" class="section">
+      <h2>网络安全主题介绍</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>范围与目标</h3>
+          <p>安全的核心目标是保密性（C）、完整性（I）与可用性（A）。以 <strong>安全设计</strong> 与 <strong>默认安全</strong> 为原则，贯穿产品与服务的全生命周期。</p>
+          <ul>
+            <li>安全设计（Security by Design）：威胁建模、最小权限、数据保护</li>
+            <li>默认安全（Secure by Default）：安全的默认配置与开箱即用的防护</li>
+            <li>生命周期管理：发现→修复→验证→复盘→基线更新</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>重点领域</h3>
+          <ul>
+            <li>应用与 API 安全：鉴权、速率限制、输入校验、日志审计</li>
+            <li>云与容器安全：身份与网络基线、镜像签名、运行时策略</li>
+            <li>供应链安全：SBOM、依赖扫描、发布签名与回滚策略</li>
+            <li>零信任与身份：持续验证、微分段、最小权限</li>
+          </ul>
+          <p>你可以从下方各章节深入实践并构建自己的安全清单。</p>
+        </article>
+      </div>
+    </section>
+    <!-- 威胁概览 -->
+    <section id="overview" class="section">
+      <h2>威胁概览</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>攻击面与常见战术</h3>
+          <p>常见攻击战术包括社会工程、凭证泄露、供应链攻击、内网横向移动与数据外泄。</p>
+          <ul>
+            <li>钓鱼与社工：邮件、短信、仿冒登录页</li>
+            <li>凭证攻击：弱口令、撞库、暴力破解</li>
+            <li>横向移动：利用远程执行、共享凭证与信任关系</li>
+            <li>数据外泄：云存储误配、API 滥用、加密不足</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>威胁情报与框架</h3>
+          <p>用结构化框架统筹攻防视角，提升检测与响应的系统性。</p>
+          <ul>
+            <li><a href="https://attack.mitre.org/" target="_blank" rel="noopener">MITRE ATT&CK</a>：对手战术与技术库</li>
+            <li><a href="https://www.cisecurity.org/controls" target="_blank" rel="noopener">CIS Controls</a>：优先级安全控制</li>
+            <li><a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener">NIST CSF</a>：识别、保护、检测、响应、恢复</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 常见漏洞 -->
+    <section id="vulns" class="section">
+      <h2>常见漏洞</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Web 与 API</h3>
+          <ul>
+            <li>注入与命令执行：输入未校验、拼接 SQL/系统命令</li>
+            <li>身份与会话：会话固定、JWT 滥用、令牌泄露</li>
+            <li>访问控制：越权访问、ID 枚举、对象未授权</li>
+            <li>配置与加密：敏感信息暴露、过时 TLS、CORS 误配</li>
+          </ul>
+          <p>参考 <a href="https://owasp.org/" target="_blank" rel="noopener">OWASP</a> 最佳实践与清单。</p>
+        </article>
+        <article class="card">
+          <h3>依赖与供应链</h3>
+          <ul>
+            <li>第三方库漏洞与未及时更新</li>
+            <li>构建与发布流程被篡改</li>
+            <li>包镜像与来源信任不足</li>
+          </ul>
+          <p>建议使用依赖扫描、SBOM 与签名验证。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 防御策略 -->
+    <section id="defense" class="section">
+      <h2>防御策略</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>基础安全控制</h3>
+          <ul>
+            <li>最小权限与强制访问控制</li>
+            <li>多因素认证（MFA）与密码策略</li>
+            <li>日志可观测性与集中化告警</li>
+            <li>漏洞管理与补丁基线</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>检测与响应</h3>
+          <ul>
+            <li>终端与网络检测（EDR/NDR）</li>
+            <li>基线偏移检测与异常行为分析</li>
+            <li>剧本化响应（SOAR）与演练</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 云与容器安全 -->
+    <section id="cloud" class="section">
+      <h2>云与容器安全</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>云配置与身份</h3>
+          <ul>
+            <li>IAM 最小权限与条件访问</li>
+            <li>存储加密与公网暴露检查</li>
+            <li>安全组与网络基线（VPC/NSG）</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>容器与镜像</h3>
+          <ul>
+            <li>镜像扫描与签名验证</li>
+            <li>运行时策略与隔离（seccomp/AppArmor）</li>
+            <li>供应链安全（构建、仓库、拉取策略）</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 零信任与身份 -->
+    <section id="zero-trust" class="section">
+      <h2>零信任与身份</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>核心原则</h3>
+          <ul>
+            <li>从不默认信任，持续验证</li>
+            <li>微分段与最小权限</li>
+            <li>强身份与设备合规</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>实践路径</h3>
+          <ul>
+            <li>统一身份与 SSO、条件访问策略</li>
+            <li>应用与 API 访问控制网关</li>
+            <li>细粒度审计与策略评估</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 事件响应 -->
+    <section id="ir" class="section">
+      <h2>安全事件响应</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>准备与演练</h3>
+          <ul>
+            <li>制定分级响应剧本与联系人清单</li>
+            <li>桌面演练与红蓝对抗</li>
+            <li>取证与证据链保全流程</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>处置与恢复</h3>
+          <ul>
+            <li>隔离、清除与修复</li>
+            <li>回归测试与加固</li>
+            <li>事后复盘与改进（Postmortem）</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CRA 法案介绍 -->
+    <section id="cra" class="section">
+      <h2>欧盟《网络韧性法案》（CRA）简介</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>什么是 CRA</h3>
+          <p>CRA（Cyber Resilience Act）是欧盟针对“含数字元素的产品”的网络安全法规，旨在提升产品的整体安全水平与事件韧性。</p>
+          <ul>
+            <li>覆盖范围：含软件/固件/联网功能的产品及其组件</li>
+            <li>核心目标：安全设计、漏洞处理、透明度与持续更新</li>
+            <li>合规标识：满足要求后可进行符合性评估并加贴 CE 标识</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>关键义务与要求</h3>
+          <ul>
+            <li>安全设计与风险评估：在设计与开发阶段实施系统性风险控制</li>
+            <li>漏洞管理与披露：建立接收与处理漏洞流程，按时修复并告知</li>
+            <li>更新与支持周期：在合理周期内提供安全更新与通知</li>
+            <li>文档与透明度：提供安全文档（含组件清单 SBOM、配置与使用指南）</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>落地实践建议</h3>
+          <ul>
+            <li>建立 SDL 流程：威胁建模、代码审计、依赖治理与发布签名</li>
+            <li>SBOM 与供应链：生成组件清单、扫描风险、验证来源与完整性</li>
+            <li>漏洞处理：公开安全联络渠道，制定补丁时限与回归验证</li>
+            <li>事件响应：准备应急剧本、保留审计日志、事后复盘与改进</li>
+          </ul>
+          <p>CRA 的具体时间线与条款以欧盟官方发布与实施细则为准，建议结合实际产品分类选择合规路径。</p>
+        </article>
+        <article class="card">
+          <h3>参考与资源</h3>
+          <ul>
+            <li><a href="https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act" target="_blank" rel="noopener">欧盟数字战略 · CRA</a></li>
+            <li><a href="https://www.enisa.europa.eu/topics" target="_blank" rel="noopener">ENISA 指南与主题</a></li>
+            <li><a href="https://www.cisa.gov/sbom" target="_blank" rel="noopener">CISA · SBOM 资源</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 工具与资源 -->
+    <section id="resources" class="section">
+      <h2>工具与资源</h2>
+      <div class="grid resources">
+        <article class="card">
+          <h3>框架与指南</h3>
+          <ul>
+            <li><a href="https://owasp.org/" target="_blank" rel="noopener">OWASP</a>：Web/API 安全最佳实践</li>
+            <li><a href="https://attack.mitre.org/" target="_blank" rel="noopener">MITRE ATT&CK</a>：对手技术映射</li>
+            <li><a href="https://www.cisecurity.org/benchmarks" target="_blank" rel="noopener">CIS Benchmarks</a>：系统与云基线</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>检测与情报</h3>
+          <ul>
+            <li><a href="https://haveibeenpwned.com/" target="_blank" rel="noopener">Have I Been Pwned</a>：凭证泄露查询</li>
+            <li><a href="https://www.shodan.io/" target="_blank" rel="noopener">Shodan</a>：公开资产与暴露面</li>
+            <li><a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a>：样本与URL检测</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>学习路径</h3>
+          <ul>
+            <li>基础：网络与操作系统、加密与认证</li>
+            <li>进阶：云与容器、攻防对抗、蓝队检测</li>
+            <li>实践：搭建实验环境、漏洞复现、编写剧本</li>
+          </ul>
+        </article>
+      </div>
+    </section>
   </main>
-  <footer>
-    <p>&copy; 2025 个人博客</p>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 aivision · 以攻促防 · 安全即体验</p>
+    </div>
   </footer>
+
 </body>
 </html>
