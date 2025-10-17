@@ -115,3 +115,12 @@ html, body {
   .grid { grid-template-columns: 1fr; }
   .nav { flex-wrap: wrap; gap: 10px; }
 }
+
+/* 新能源场景图片样式 */
+.card img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: block;
+}

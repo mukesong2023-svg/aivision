@@ -24,6 +24,7 @@
         <a href="#security-intro">主题介绍</a>
         <a href="#cra">CRA法案</a>
         <a href="#ir">事件响应</a>
+        <a href="#new-energy">新能源安全</a>
         <a href="#resources">工具与资源</a>
         <button id="themeToggle" class="btn ghost" aria-label="切换主题">切换主题</button>
       </nav>
@@ -251,6 +252,54 @@
             <li><a href="https://www.enisa.europa.eu/topics" target="_blank" rel="noopener">ENISA 指南与主题</a></li>
             <li><a href="https://www.cisa.gov/sbom" target="_blank" rel="noopener">CISA · SBOM 资源</a></li>
           </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 新能源网络安全应用 -->
+    <section id="new-energy" class="section">
+      <h2>新能源网络安全应用</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>EV 充电与车桩通信安全</h3>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/First_EV_Charging_Station_in_Barcelona.JPG" alt="EV Charging Station in Barcelona" />
+          <ul>
+            <li>OCPP 2.0.1 安全事件与证书生命周期，充电桩配置防护</li>
+            <li>ISO 15118 Plug&Charge（EVCC-SECC）双向 TLS 与 PKI</li>
+            <li>设备可信根与固件签名，防止伪造与篡改</li>
+          </ul>
+          <p>
+            参考：
+            <a href="https://openchargealliance.org/wp-content/uploads/2024/01/new_in_ocpp_201-v10.pdf" target="_blank" rel="noopener">OCPP 2.0.1 新特性与安全</a> ·
+            <a href="https://en.wikipedia.org/wiki/ISO_15118" target="_blank" rel="noopener">ISO 15118</a>
+          </p>
+        </article>
+        <article class="card">
+          <h3>光伏电站与 SCADA 安全</h3>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Webberville_Solar_Farm_Near_Austin_Texas_from_the_Air.JPG" alt="Aerial view of solar farm" />
+          <ul>
+            <li>网络分区与通道（Zones/Conduits），最小化横向移动</li>
+            <li>白名单与协议深度检测（Modbus/OPC-UA 等）</li>
+            <li>异常检测与告警剧本，工艺安全优先</li>
+          </ul>
+          <p>
+            参考：
+            <a href="https://commons.wikimedia.org/wiki/File:SCADA_schematic_overview-s.svg" target="_blank" rel="noopener">SCADA 概览图</a> ·
+            <a href="https://en.wikipedia.org/wiki/IEC_62443" target="_blank" rel="noopener">IEC 62443</a>
+          </p>
+        </article>
+        <article class="card">
+          <h3>风电/储能设施安全</h3>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Twin_Groves_Wind_Farm_DSC03252.JPG" alt="Wind farm" />
+          <ul>
+            <li>现场设备与站控系统分层隔离，零信任接入</li>
+            <li>日志集中与告警关联，异常工况快速处置</li>
+            <li>固件/配置签名与回滚机制，提升韧性</li>
+          </ul>
+          <p>
+            参考：
+            <a href="https://commons.wikimedia.org/wiki/Category:SCADA" target="_blank" rel="noopener">SCADA 参考</a>
+          </p>
         </article>
       </div>
     </section>
