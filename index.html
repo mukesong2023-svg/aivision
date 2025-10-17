@@ -21,6 +21,8 @@
         <a href="#defense">防御策略</a>
         <a href="#cloud">云与容器</a>
         <a href="#zero-trust">零信任</a>
+        <a href="#security-intro">主题介绍</a>
+        <a href="#cra">CRA法案</a>
         <a href="#ir">事件响应</a>
         <a href="#resources">工具与资源</a>
         <button id="themeToggle" class="btn ghost" aria-label="切换主题">切换主题</button>
@@ -40,6 +42,31 @@
   </section>
 
   <main class="container">
+    <!-- 网络安全主题介绍 -->
+    <section id="security-intro" class="section">
+      <h2>网络安全主题介绍</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>范围与目标</h3>
+          <p>安全的核心目标是保密性（C）、完整性（I）与可用性（A）。以 <strong>安全设计</strong> 与 <strong>默认安全</strong> 为原则，贯穿产品与服务的全生命周期。</p>
+          <ul>
+            <li>安全设计（Security by Design）：威胁建模、最小权限、数据保护</li>
+            <li>默认安全（Secure by Default）：安全的默认配置与开箱即用的防护</li>
+            <li>生命周期管理：发现→修复→验证→复盘→基线更新</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>重点领域</h3>
+          <ul>
+            <li>应用与 API 安全：鉴权、速率限制、输入校验、日志审计</li>
+            <li>云与容器安全：身份与网络基线、镜像签名、运行时策略</li>
+            <li>供应链安全：SBOM、依赖扫描、发布签名与回滚策略</li>
+            <li>零信任与身份：持续验证、微分段、最小权限</li>
+          </ul>
+          <p>你可以从下方各章节深入实践并构建自己的安全清单。</p>
+        </article>
+      </div>
+    </section>
     <!-- 威胁概览 -->
     <section id="overview" class="section">
       <h2>威胁概览</h2>
@@ -180,6 +207,49 @@
             <li>隔离、清除与修复</li>
             <li>回归测试与加固</li>
             <li>事后复盘与改进（Postmortem）</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CRA 法案介绍 -->
+    <section id="cra" class="section">
+      <h2>欧盟《网络韧性法案》（CRA）简介</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>什么是 CRA</h3>
+          <p>CRA（Cyber Resilience Act）是欧盟针对“含数字元素的产品”的网络安全法规，旨在提升产品的整体安全水平与事件韧性。</p>
+          <ul>
+            <li>覆盖范围：含软件/固件/联网功能的产品及其组件</li>
+            <li>核心目标：安全设计、漏洞处理、透明度与持续更新</li>
+            <li>合规标识：满足要求后可进行符合性评估并加贴 CE 标识</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>关键义务与要求</h3>
+          <ul>
+            <li>安全设计与风险评估：在设计与开发阶段实施系统性风险控制</li>
+            <li>漏洞管理与披露：建立接收与处理漏洞流程，按时修复并告知</li>
+            <li>更新与支持周期：在合理周期内提供安全更新与通知</li>
+            <li>文档与透明度：提供安全文档（含组件清单 SBOM、配置与使用指南）</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>落地实践建议</h3>
+          <ul>
+            <li>建立 SDL 流程：威胁建模、代码审计、依赖治理与发布签名</li>
+            <li>SBOM 与供应链：生成组件清单、扫描风险、验证来源与完整性</li>
+            <li>漏洞处理：公开安全联络渠道，制定补丁时限与回归验证</li>
+            <li>事件响应：准备应急剧本、保留审计日志、事后复盘与改进</li>
+          </ul>
+          <p>CRA 的具体时间线与条款以欧盟官方发布与实施细则为准，建议结合实际产品分类选择合规路径。</p>
+        </article>
+        <article class="card">
+          <h3>参考与资源</h3>
+          <ul>
+            <li><a href="https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act" target="_blank" rel="noopener">欧盟数字战略 · CRA</a></li>
+            <li><a href="https://www.enisa.europa.eu/topics" target="_blank" rel="noopener">ENISA 指南与主题</a></li>
+            <li><a href="https://www.cisa.gov/sbom" target="_blank" rel="noopener">CISA · SBOM 资源</a></li>
           </ul>
         </article>
       </div>
