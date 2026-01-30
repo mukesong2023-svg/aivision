@@ -1,0 +1,35 @@
+# 敏感文件 - 不要提交到Git
+*.env
+.env
+.env.local
+.env.*.local
+secrets.json
+secrets.py
+my_secrets.py
+config_private.json
+lighter_config.json
+private_key.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+build/
+dist/
+
+# Logs
+*.log
